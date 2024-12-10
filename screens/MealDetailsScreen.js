@@ -14,7 +14,9 @@ const MealDetailsScreen = ({route, navigation}) => {
   const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId)
 
   const changeFavoriteHandler = () => {
-    mealIsFavorite ? favoriteMealsCtx.removeFavorite(mealId) : favoriteMealsCtx.addFavorite(mealId)
+    mealIsFavorite
+      ? favoriteMealsCtx.removeFavorite(mealId)
+      : favoriteMealsCtx.addFavorite(mealId)
   }
 
   useLayoutEffect(() => {
@@ -24,12 +26,12 @@ const MealDetailsScreen = ({route, navigation}) => {
           <IconButton
             icon={mealIsFavorite ? "star" : "star-outlined"}
             color={'white'}
-            onPressIn={changeFavoriteHandler}
+            onPress={changeFavoriteHandler}
           />
         )
       },
     })
-  }, [navigation]);
+  }, [navigation, changeFavoriteHandler]);
 
   return (
     <ScrollView style={styles.screen}>
