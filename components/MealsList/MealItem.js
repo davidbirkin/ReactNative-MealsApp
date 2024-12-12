@@ -3,7 +3,7 @@ import {useNavigation} from "@react-navigation/native";
 import MealDetails from "../MealDetails";
 import {MEALS} from "../../data/dummy-data";
 
-const MealItem = ({id, title, imageUrl, duration, complexity, affordability}) => {
+const MealItem = ({id, title, imageUrl}) => {
   const navigation = useNavigation();
 
   const meal = MEALS.find(meal => meal.id === id);
